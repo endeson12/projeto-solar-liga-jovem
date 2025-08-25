@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { User, Mail, Phone, MapPin, Edit } from 'lucide-react'
+import { User, Mail, Edit, MapPin } from 'lucide-react'
 
 export function ClientProfile({ user }: { user: any }) {
   return (

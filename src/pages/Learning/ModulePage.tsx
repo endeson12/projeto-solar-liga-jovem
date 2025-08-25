@@ -56,9 +56,9 @@ A energia solar fotovoltaica é uma tecnologia que converte a luz solar diretame
 }
 
 export function ModulePage() {
-  const { moduleId } = useParams()
+  useParams()
+  const [progress] = useState(65)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [progress, setProgress] = useState(65)
   const [quizAnswers, setQuizAnswers] = useState<number[]>([])
   const { toast } = useToast()
 

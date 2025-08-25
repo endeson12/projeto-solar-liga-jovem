@@ -58,7 +58,8 @@ const mockCompany = {
 }
 
 export function CompanyDetailPage() {
-  const { id } = useParams()
+  // O parâmetro id está disponível via useParams se necessário
+  useParams()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-solar-neutral via-background to-solar-neutral-dark">
@@ -181,7 +182,7 @@ export function CompanyDetailPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {mockCompany.gallery.map((image, index) => (
+                    {mockCompany.gallery.map((_, index) => (
                       <div
                         key={index}
                         className="aspect-square bg-gradient-to-r from-primary/20 to-solar-tertiary/20 rounded-lg flex items-center justify-center"

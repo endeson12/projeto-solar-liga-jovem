@@ -11,8 +11,6 @@ import {
   Download, 
   Info,
   DollarSign,
-  Calendar,
-  Leaf,
   ArrowRight,
   Lightbulb
 } from 'lucide-react'
@@ -65,12 +63,13 @@ export function SimulatorPage() {
     handleSubmit,
     formState: { errors },
     watch,
-    setValue,
   } = useForm<SimulatorFormData>({
     resolver: zodResolver(simulatorSchema),
   })
 
+  // Monitora o valor da conta mensal para exibição
   const monthlyBill = watch('monthlyBill')
+  // Usado em algum lugar do template
 
   const onSubmit = async (data: SimulatorFormData) => {
     try {

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Building, Mail, Phone, MapPin, Edit, Users, Briefcase } from 'lucide-react'
+import { Building, Mail, Edit, Users, Briefcase } from 'lucide-react'
 
 export function CompanyProfile({ user }: { user: any }) {
   return (
