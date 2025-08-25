@@ -1,4 +1,4 @@
-import { User, Role } from '@/types'
+import { User } from '@/types'
 import { generateId } from '@/lib/utils'
 
 interface RegisterData {

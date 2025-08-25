@@ -4,7 +4,6 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { AuthProvider } from '@/domains/auth/auth-provider'
 import { Layout } from '@/components/layout/layout'
 import { AuthGuard } from '@/app/guards/auth-guard'
-import { RoleGuard } from '@/app/guards/role-guard'
 
 // Pages
 import { HomePage } from '@/pages/Home/HomePage'

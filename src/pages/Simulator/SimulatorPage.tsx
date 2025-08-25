@@ -357,7 +357,7 @@ export function SimulatorPage() {
                             {formatCurrency(result.financing.monthlyPayment * 100)}
                           </div>
                           <div className="text-sm text-muted-foreground">
-                            parcela mensal em {simulatorService['financingYears'] || 10} anos
+                            parcela mensal em 10 anos
                           </div>
                           <p className="text-xs text-muted-foreground mt-2">
                             Taxa: {result.financing.interestRate}% ao ano

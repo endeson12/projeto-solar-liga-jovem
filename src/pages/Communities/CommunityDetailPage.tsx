@@ -11,9 +11,7 @@ import {
   MessageCircle,
   TrendingUp,
   Award,
-  Building2,
-  UserPlus,
-  Share2
+  Building2
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -66,7 +64,7 @@ const mockCommunity = {
       title: 'Novos membros',
       description: '5 novas famílias se juntaram à comunidade',
       date: '2024-01-15',
-      icon: UserPlus
+      icon: Users
     }
   ],
   partnerCompanies: [
@@ -133,11 +131,11 @@ export function CommunityDetailPage() {
             
             <div className="flex flex-col sm:flex-row gap-3">
               <Button variant="solar" size="lg">
-                <UserPlus className="mr-2 h-4 w-4" />
+                <Users className="mr-2 h-4 w-4" />
                 Participar
               </Button>
               <Button variant="outline" size="lg">
-                <Share2 className="mr-2 h-4 w-4" />
+                <MessageCircle className="h-4 w-4" />
                 Compartilhar
               </Button>
             </div>
@@ -436,7 +434,7 @@ export function CommunityDetailPage() {
               <Card>
                 <CardContent className="pt-6 space-y-3">
                   <Button variant="solar" className="w-full">
-                    <UserPlus className="mr-2 h-4 w-4" />
+                    <Users className="mr-2 h-4 w-4" />
                     Participar da Comunidade
                   </Button>
                   <Button variant="outline" className="w-full">

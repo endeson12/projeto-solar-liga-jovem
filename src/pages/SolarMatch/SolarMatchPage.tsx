@@ -6,14 +6,10 @@ import {
   Star, 
   MapPin, 
   Award, 
-  TrendingUp,
   Users,
   Clock,
   DollarSign,
   Search,
-  Filter,
-  Medal,
-  Target,
   Zap,
   Building2
 } from 'lucide-react'
@@ -149,7 +145,7 @@ const getBadgeColor = (badge: string) => {
 const getBadgeIcon = (badge: string) => {
   switch (badge) {
     case 'gold': return Trophy
-    case 'silver': return Medal
+    case 'silver': return Award
     case 'bronze': return Award
     default: return Award
   }
@@ -330,7 +326,7 @@ export function SolarMatchPage() {
           animate="visible"
           className="space-y-4"
         >
-          {filteredInstallers.map((installer, index) => {
+          {filteredInstallers.map((installer) => {
             const BadgeIcon = getBadgeIcon(installer.badge)
             
             return (
