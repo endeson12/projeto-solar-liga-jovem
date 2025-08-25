@@ -91,7 +91,8 @@ const mockCommunity = {
 }
 
 export function CommunityDetailPage() {
-  const { id } = useParams()
+  // O parâmetro id está disponível via useParams se necessário
+  useParams()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-solar-neutral via-background to-solar-neutral-dark">

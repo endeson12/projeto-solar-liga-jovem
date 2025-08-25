@@ -68,8 +68,8 @@ export function SimulatorPage() {
   })
 
   // Monitora o valor da conta mensal para exibição
-  const monthlyBill = watch('monthlyBill')
-  // Usado em algum lugar do template
+  // O valor é usado no template, então mantemos o watch ativo
+  watch('monthlyBill')
 
   const onSubmit = async (data: SimulatorFormData) => {
     try {
