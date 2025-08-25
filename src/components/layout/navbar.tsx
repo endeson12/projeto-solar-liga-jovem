@@ -111,13 +111,13 @@ export function Navbar() {
           </div>
 
           {/* Right side */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             {/* Theme toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-              className="w-9 h-9"
+              className="w-9 h-9 hidden md:inline-flex"
             >
               {theme === 'dark' ? (
                 <Sun className="h-5 w-5" />
@@ -127,7 +127,7 @@ export function Navbar() {
             </Button>
 
             {/* Auth buttons */}
-            <div className="flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-2">
               {isAuthenticated && user ? (
                 <UserAvatar user={user} onLogout={handleLogout} />
               ) : (
@@ -148,22 +148,22 @@ export function Navbar() {
                   </Button>
                 </>
               )}
-              
-              {/* Mobile menu button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="md:hidden"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {isOpen ? (
-                  <X className="h-5 w-5" />
-                ) : (
-                  <Menu className="h-5 w-5" />
-                )}
-                <span className="sr-only">Menu</span>
-              </Button>
             </div>
+
+            {/* Mobile menu button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+              <span className="sr-only">Menu</span>
+            </Button>
           </div>
         </div>
 
