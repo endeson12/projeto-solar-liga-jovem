@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    /* Solar gradient variables */
+    --solar-gradient-light: linear-gradient(135deg, #FFF8DC 0%, #FFFBF0 25%, #FFFFFF 50%, #F0F8FF 75%, #E6F3FF 100%);
+    --solar-radial-light: radial-gradient(ellipse at center top, #FFF8DC 0%, #FFFBF0 20%, #FFFFFF 40%, #F8FAFC 100%);
+    --solar-hero-light: linear-gradient(135deg, #FFB703 0%, #FFA500 15%, #FFD700 30%, #FFF8DC 60%, #FFFFFF 100%);
+    --solar-section-alt: #F8F9FA;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 45 93% 47%; /* Solar Primary #FFB703 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 45 93% 47%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 195 100% 7%; /* Solar Secondary #023047 */
+    --foreground: 210 40% 98%;
+    
+    /* Solar gradient variables for dark mode */
+    --solar-gradient-dark: linear-gradient(135deg, #023047 0%, #0A4A5C 25%, #1A5A6E 50%, #2A6A7E 75%, #3A7A8E 100%);
+    --solar-radial-dark: radial-gradient(ellipse at center top, #FFB703 0%, #E6A500 10%, #023047 30%, #001B2E 100%);
+    --solar-hero-dark: linear-gradient(135deg, #FFB703 0%, #E6A500 15%, #CC9400 30%, #023047 60%, #001B2E 100%);
+    --solar-section-alt-dark: #0F3A4A;
+    --card: 195 100% 7%;
+    --card-foreground: 210 40% 98%;
+    --popover: 195 100% 7%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 45 93% 47%; /* Solar Primary #FFB703 */
+    --primary-foreground: 195 100% 7%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 45 93% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom Solar Theme Classes */
+.solar-gradient {
+  background: linear-gradient(135deg, #FFB703 0%, #FB8500 100%);
+}
+
+.solar-text-gradient {
+  background: linear-gradient(135deg, #FFB703 0%, #FB8500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.solar-shadow {
+  box-shadow: 0 4px 20px rgba(255, 183, 3, 0.15);
+}
+
+/* Accessibility improvements */
+.focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Leaflet map custom styles */
+.leaflet-container {
+  @apply rounded-lg;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply bg-card text-card-foreground rounded-lg shadow-lg;
+}
+
+.leaflet-popup-tip {
+  @apply bg-card;
+}
+
+/* Solar Background Utility Classes */
+.bg-solar-gradient {
+  background: var(--solar-gradient-light);
+}
+
+.bg-solar-radial {
+  background: var(--solar-radial-light);
+}
+
+.bg-solar-hero {
+  background: var(--solar-hero-light);
+  background-attachment: fixed;
+}
+
+.bg-solar-section-alt {
+  background-color: var(--solar-section-alt);
+}
+
+.dark .bg-solar-gradient {
+  background: var(--solar-gradient-dark);
+}
+
+.dark .bg-solar-radial {
+  background: var(--solar-radial-dark);
+}
+
+.dark .bg-solar-hero {
+  background: var(--solar-hero-dark);
+  background-attachment: fixed;
+}
+
+.dark .bg-solar-section-alt {
+  background-color: var(--solar-section-alt-dark);
+}
+
+/* Solar glow effects */
+.solar-glow {
+  position: relative;
+}
+
+.solar-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 183, 3, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark .solar-glow::before {
+  background: radial-gradient(circle, rgba(255, 183, 3, 0.05) 0%, transparent 70%);
+}
+
+/* Animated solar rays */
+.solar-rays {
+  position: relative;
+  overflow: hidden;
+}
+
+.solar-rays::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 183, 3, 0.03) 45deg,
+    transparent 90deg,
+    rgba(255, 183, 3, 0.03) 135deg,
+    transparent 180deg,
+    rgba(255, 183, 3, 0.03) 225deg,
+    transparent 270deg,
+    rgba(255, 183, 3, 0.03) 315deg,
+    transparent 360deg
+  );
+  animation: rotate 60s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
