@@ -20,12 +20,22 @@ import { LoginPage } from '@/pages/Auth/LoginPage'
 import { RegisterPage } from '@/pages/Auth/RegisterPage'
 import { HelpPage } from '@/pages/Help/HelpPage'
 import { NotFoundPage } from '@/pages/NotFound/NotFoundPage'
+import { AccountPage } from '@/pages/Account/AccountPage'
 
+/**
+ * Componente principal da aplicação SolAr
+ * 
+ * @component
+ * @example
+ * return (
+ *   <App />
+ * )
+ */
 function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="solar-ui-theme">
       <AuthProvider>
-        <div className="min-h-screen bg-background font-sans antialiased">
+        <div className="min-h-screen bg-background font-sans antialiased" role="main">
           <Routes>
             {/* Public routes */}
             <Route path="/" element={<Layout />}>
@@ -37,11 +47,14 @@ function App() {
               <Route path="comunidades/:id" element={<CommunityDetailPage />} />
               <Route path="solarmatch" element={<SolarMatchPage />} />
               <Route path="ajuda" element={<HelpPage />} />
+              
+              {/* Protected routes */}
+              <Route path="conta" element={<AuthGuard><AccountPage /></AuthGuard>} />
             </Route>
-
-            {/* Auth routes */}
-            <Route path="/auth/login" element={<LoginPage />} />
-            <Route path="/auth/register" element={<RegisterPage />} />
+            
+            {/* Auth routes - keep only one set of auth routes */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/registro" element={<RegisterPage />} />
 
             {/* Protected routes */}
             <Route

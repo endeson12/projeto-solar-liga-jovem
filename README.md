@@ -42,6 +42,13 @@ O **SolAr** é uma plataforma digital inovadora que democratiza o acesso à ener
 - **Framer Motion** - Animações fluidas
 - **React Router** - Roteamento SPA
 
+### Testes
+- **Vitest** - Framework de testes
+- **React Testing Library** - Testes de componentes React
+- **ESLint** - Linter e formatação de código
+- **Husky** - Git hooks
+- **lint-staged** - Execução de linters em arquivos staged
+
 ### Bibliotecas Principais
 - **Zustand** - Gerenciamento de estado global
 - **React Hook Form + Zod** - Formulários e validação
@@ -128,6 +135,10 @@ npm run build        # Build para produção
 npm run preview      # Preview do build
 npm run lint         # Linting do código
 npm run type-check   # Verificação de tipos
+npm test             # Executar testes
+npm run test:watch   # Executar testes em modo watch
+npm run test:coverage # Gerar relatório de cobertura
+npm run test:ui      # Interface gráfica para testes
 npm test            # Execução de testes
 ```
 

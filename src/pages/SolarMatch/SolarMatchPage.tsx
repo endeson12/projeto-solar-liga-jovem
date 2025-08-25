@@ -135,10 +135,10 @@ const mockInstallers = [
 
 const getBadgeColor = (badge: string) => {
   switch (badge) {
-    case 'gold': return 'text-yellow-600 bg-yellow-100 dark:bg-yellow-900/20'
-    case 'silver': return 'text-gray-600 bg-gray-100 dark:bg-gray-900/20'
-    case 'bronze': return 'text-amber-700 bg-amber-100 dark:bg-amber-900/20'
-    default: return 'text-gray-600 bg-gray-100 dark:bg-gray-900/20'
+    case 'gold': return 'text-yellow-800 dark:text-yellow-100 bg-yellow-100 dark:bg-yellow-950/80 border border-yellow-300 dark:border-yellow-900/50'
+    case 'silver': return 'text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-gray-900/80 border border-gray-300 dark:border-gray-800/50'
+    case 'bronze': return 'text-amber-800 dark:text-amber-100 bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-900/50'
+    default: return 'text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-gray-900/80 border border-gray-300 dark:border-gray-800/50'
   }
 }
 
@@ -197,7 +197,7 @@ export function SolarMatchPage() {
             <Trophy className="inline-block mr-3 h-10 w-10 text-primary" />
             SolarMatch
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground dark:text-white max-w-3xl mx-auto">
             Ranking dos melhores instaladores de energia solar. Encontre empresas certificadas, 
             compare preços e escolha o parceiro ideal para seu projeto solar.
           </p>

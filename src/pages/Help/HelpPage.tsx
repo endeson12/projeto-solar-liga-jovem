@@ -215,7 +215,7 @@ export function HelpPage() {
             <HelpCircle className="inline-block mr-3 h-10 w-10 text-primary" />
             Central de Ajuda
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground dark:text-white max-w-3xl mx-auto">
             Encontre respostas para suas dúvidas sobre energia solar, nossa plataforma e como aproveitar ao máximo o SolAr.
           </p>
         </motion.div>

@@ -117,7 +117,7 @@ export function CommunitiesPage() {
             <Users className="inline-block mr-3 h-10 w-10 text-primary" />
             Comunidades Energéticas
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground dark:text-white max-w-3xl mx-auto">
             Descubra comunidades que estão transformando suas realidades através da energia solar. 
             Junte-se ao movimento e faça parte dessa revolução energética!
           </p>

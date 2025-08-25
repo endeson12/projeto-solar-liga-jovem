@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 95%;
+    --foreground: 222.2 84% 15%;
     
     /* Solar gradient variables */
-    --solar-gradient-light: linear-gradient(135deg, #FFF8DC 0%, #FFFBF0 25%, #FFFFFF 50%, #F0F8FF 75%, #E6F3FF 100%);
-    --solar-radial-light: radial-gradient(ellipse at center top, #FFF8DC 0%, #FFFBF0 20%, #FFFFFF 40%, #F8FAFC 100%);
-    --solar-hero-light: linear-gradient(135deg, #FFB703 0%, #FFA500 15%, #FFD700 30%, #FFF8DC 60%, #FFFFFF 100%);
-    --solar-section-alt: #F8F9FA;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --solar-gradient-light: linear-gradient(135deg, #F0E8D0 0%, #F0E8D0 25%, #F5F5F5 50%, #E0E8F0 75%, #D6E3EF 100%);
+    --solar-radial-light: radial-gradient(ellipse at center top, #F0E8D0 0%, #F0E8D0 20%, #F5F5F5 40%, #F0F2F5 100%);
+    --solar-hero-light: linear-gradient(135deg, #FFB703 0%, #FFA500 15%, #FFD700 30%, #F0E8D0 60%, #F5F5F5 100%);
+    --solar-section-alt: #E8EBEE;
+    --card: 0 0% 99%;
+    --card-foreground: 222.2 84% 15%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 222.2 84% 15%;
     --primary: 45 93% 47%; /* Solar Primary #FFB703 */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 98%;
     --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --muted: 210 20% 92%;
+    --muted-foreground: 215.4 16.3% 36.9%;
+    --accent: 210 20% 92%;
+    --accent-foreground: 222.2 84% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
@@ -198,13 +198,13 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 183, 3, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 183, 3, 0.04) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
 }
 
 .dark .solar-glow::before {
-  background: radial-gradient(circle, rgba(255, 183, 3, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 183, 3, 0.02) 0%, transparent 70%);
 }
 
 /* Animated solar rays */
@@ -223,13 +223,13 @@
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    rgba(255, 183, 3, 0.03) 45deg,
+    rgba(255, 183, 3, 0.015) 45deg,
     transparent 90deg,
-    rgba(255, 183, 3, 0.03) 135deg,
+    rgba(255, 183, 3, 0.015) 135deg,
     transparent 180deg,
-    rgba(255, 183, 3, 0.03) 225deg,
+    rgba(255, 183, 3, 0.015) 225deg,
     transparent 270deg,
-    rgba(255, 183, 3, 0.03) 315deg,
+    rgba(255, 183, 3, 0.015) 315deg,
     transparent 360deg
   );
   animation: rotate 60s linear infinite;

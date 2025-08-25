@@ -109,7 +109,7 @@ export function CompaniesPage() {
             <Building2 className="inline-block mr-3 h-10 w-10 text-primary" />
             Empresas Parceiras
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground dark:text-white max-w-3xl mx-auto">
             Encontre empresas certificadas e qualificadas para seu projeto de energia solar. 
             Todas foram avaliadas pela nossa equipe e pela comunidade.
           </p>

@@ -1,16 +1,10 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Sun, Menu, X, Moon, User, LogOut } from 'lucide-react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Sun, Menu, X, Moon, User, LogOut, UserPlus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/components/theme-provider'
 import { useAuth } from '@/domains/auth/use-auth'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+import { UserAvatar } from '@/components/user/user-avatar'
 
 const navigation = [
   { name: 'Início', href: '/' },
@@ -36,15 +30,24 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
   const { user, logout, isAuthenticated } = useAuth()
   const location = useLocation()
+  const navigate = useNavigate()
 
   const isActive = (path: string) => location.pathname === path
-
   const canAccessAdmin = user?.role === 'ADMIN' || user?.role === 'EMPRESA'
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+      navigate('/')
+    } catch (error) {
+      console.error('Erro ao fazer logout:', error)
+    }
+  }
 
   return (
     <nav className="bg-background border-b border-border sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
@@ -116,63 +119,51 @@ export function Navbar() {
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               className="w-9 h-9"
             >
-              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Alternar tema</span>
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </Button>
 
             {/* Auth buttons */}
-            {isAuthenticated ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <User className="h-4 w-4" />
-                    <span className="sr-only">Menu do usuário</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <div className="flex items-center justify-start gap-2 p-2">
-                    <div className="flex flex-col space-y-1 leading-none">
-                      <p className="font-medium">{user?.name}</p>
-                      <p className="w-[200px] truncate text-sm text-muted-foreground">
-                        {user?.email}
-                      </p>
-                    </div>
-                  </div>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={logout}>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    <span>Sair</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <div className="flex items-center space-x-2">
-                <Button variant="ghost" asChild>
-                  <Link to="/auth/login">Entrar</Link>
-                </Button>
-                <Button variant="solar" asChild>
-                  <Link to="/auth/register">Cadastrar</Link>
-                </Button>
-              </div>
-            )}
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-              className="w-9 h-9"
-            >
-              {isOpen ? (
-                <X className="h-5 w-5" />
+            <div className="flex items-center space-x-2">
+              {isAuthenticated && user ? (
+                <UserAvatar user={user} onLogout={handleLogout} />
               ) : (
-                <Menu className="h-5 w-5" />
+                <>
+                  <Button variant="outline" asChild className="hidden sm:inline-flex">
+                    <Link to="/login">Entrar</Link>
+                  </Button>
+                  <Button asChild className="hidden sm:inline-flex">
+                    <Link to="/registro" className="flex items-center">
+                      <UserPlus className="mr-2 h-4 w-4" />
+                      <span>Criar Conta</span>
+                    </Link>
+                  </Button>
+                  <Button variant="ghost" size="icon" className="sm:hidden" asChild>
+                    <Link to="/login">
+                      <User className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                </>
               )}
-              <span className="sr-only">Menu</span>
-            </Button>
+              
+              {/* Mobile menu button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
+                <span className="sr-only">Menu</span>
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -246,12 +237,12 @@ export function Navbar() {
                   {!isAuthenticated && (
                     <div className="flex space-x-2">
                       <Button variant="ghost" asChild>
-                        <Link to="/auth/login" onClick={() => setIsOpen(false)}>
+                        <Link to="/login" onClick={() => setIsOpen(false)}>
                           Entrar
                         </Link>
                       </Button>
                       <Button variant="solar" asChild>
-                        <Link to="/auth/register" onClick={() => setIsOpen(false)}>
+                        <Link to="/registro" onClick={() => setIsOpen(false)}>
                           Cadastrar
                         </Link>
                       </Button>

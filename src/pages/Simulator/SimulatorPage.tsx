@@ -128,7 +128,7 @@ export function SimulatorPage() {
             <Calculator className="inline-block mr-3 h-10 w-10 text-primary" />
             Simulador Solar
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground dark:text-white max-w-3xl mx-auto">
             Descubra quanto você pode economizar com energia solar. 
             Nossa calculadora já considera a Lei 14.300/2022 ("taxa do sol").
           </p>

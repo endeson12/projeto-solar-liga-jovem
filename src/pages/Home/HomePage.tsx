@@ -112,7 +112,7 @@ export function HomePage() {
             animate="visible"
           >
             <motion.div
-              className="inline-flex items-center px-6 py-3 rounded-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-primary text-sm font-medium mb-8 shadow-lg"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-gray-800 dark:text-white text-sm font-medium mb-8 shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -120,15 +120,15 @@ export function HomePage() {
               Energia do Sol para Todos
             </motion.div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white dark:text-white mb-6 drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-gray-900 dark:text-white mb-6 drop-shadow-lg">
               Projeto{' '}
-              <span className="text-yellow-300 drop-shadow-md">SolAr</span>
+              <span className="text-yellow-600 dark:text-yellow-400 drop-shadow-md">SolAr</span>
             </h1>
             
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-semibold text-white/90 dark:text-white/90 mb-8 drop-shadow-md">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-semibold text-gray-800 dark:text-gray-100 mb-8">
               Energia do Sol para Todos
             </h2>
-            <p className="text-lg md:text-xl text-white/80 dark:text-white/80 mb-12 max-w-3xl mx-auto drop-shadow-sm">
+            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-12 max-w-3xl mx-auto">
               Economize na conta de luz, aprenda uma nova profissão e fortaleça sua comunidade. 
               Descubra como a energia solar pode transformar sua vida.
             </p>

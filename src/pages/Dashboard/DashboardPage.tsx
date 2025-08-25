@@ -101,7 +101,7 @@ export function DashboardPage() {
           <h1 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2">
             Olá, {user.name}! ☀️
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground dark:text-white">
             {user.role === 'ADMIN' && 'Gerencie a plataforma SolAr'}
             {user.role === 'EMPRESA' && 'Acompanhe seus projetos e leads'}
             {user.role === 'MEMBRO' && 'Acompanhe sua jornada solar'}

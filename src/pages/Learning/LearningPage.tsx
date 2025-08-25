@@ -54,7 +54,7 @@ export function LearningPage() {
             <BookOpen className="inline-block mr-3 h-10 w-10 text-primary" />
             Área de Aprendizagem
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground dark:text-white max-w-3xl mx-auto">
             Desenvolva suas habilidades em energia solar com nossos cursos gratuitos e certificações reconhecidas.
           </p>
         </motion.div>
@@ -108,10 +108,10 @@ export function LearningPage() {
                 
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${
-                      course.level === 'Básico' ? 'bg-green-100 text-green-800' :
-                      course.level === 'Intermediário' ? 'bg-yellow-100 text-yellow-800' :
-                      'bg-red-100 text-red-800'
+                    <span className={`px-2 py-1 rounded text-xs font-medium border ${
+                      course.level === 'Básico' ? 'bg-green-100 dark:bg-green-900/80 text-green-800 dark:text-green-100 border-green-300 dark:border-green-800/50' :
+                      course.level === 'Intermediário' ? 'bg-yellow-100 dark:bg-yellow-900/80 text-yellow-800 dark:text-yellow-100 border-yellow-300 dark:border-yellow-800/50' :
+                      'bg-red-100 dark:bg-red-900/80 text-red-800 dark:text-red-100 border-red-300 dark:border-red-800/50'
                     }`}>
                       {course.level}
                     </span>
