@@ -6,13 +6,13 @@ const Skeleton = ({ className }: { className: string }) => (
 import { ClientProfile } from '@/components/profiles/ClientProfile'
 import { CompanyProfile } from '@/components/profiles/CompanyProfile'
 import { WorkerProfile } from '@/components/profiles/WorkerProfile'
+import type { ProfileUser } from '@/types/profile'
 
 // Mock data for demonstration purposes
 type MockUserData = {
-  [key: string]: any;
-  CLIENT: any;
-  EMPRESA: any;
-  MEMBRO: any;
+  CLIENT: ProfileUser
+  EMPRESA: ProfileUser
+  MEMBRO: ProfileUser
 };
 
 const mockUserData: MockUserData = {

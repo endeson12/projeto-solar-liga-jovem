@@ -35,7 +35,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="solar-ui-theme">
       <AuthProvider>
-        <div className="min-h-screen bg-background font-sans antialiased" role="main">
+        <div className="min-h-screen bg-background font-sans antialiased">
           <Routes>
             {/* Public routes */}
             <Route path="/" element={<Layout />}>

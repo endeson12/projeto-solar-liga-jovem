@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Building, Mail, Edit, Users, Briefcase } from 'lucide-react'
+import type { ProfileUser } from '@/types/profile'
 
-export function CompanyProfile({ user }: { user: any }) {
+export function CompanyProfile({ user }: { user: ProfileUser }) {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">

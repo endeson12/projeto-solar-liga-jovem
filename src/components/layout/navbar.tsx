@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Sun, Menu, X, Moon, User, LogOut, UserPlus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { useTheme } from '@/components/theme-provider'
+import { useTheme } from '@/components/use-theme'
 import { useAuth } from '@/domains/auth/use-auth'
 import { UserAvatar } from '@/components/user/user-avatar'
 

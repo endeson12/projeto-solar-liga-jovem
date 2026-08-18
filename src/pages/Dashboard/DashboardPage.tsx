@@ -84,10 +84,6 @@ export function DashboardPage() {
     )
   }
 
-  const data = user.role === 'ADMIN' ? mockData.admin 
-             : user.role === 'EMPRESA' ? mockData.empresa 
-             : mockData.member
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-solar-neutral via-background to-solar-neutral-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -110,22 +106,22 @@ export function DashboardPage() {
 
         {/* Dashboard por Role */}
         {user.role === 'MEMBRO' && (
-          <MemberDashboard data={data} />
+          <MemberDashboard data={mockData.member} />
         )}
 
         {user.role === 'EMPRESA' && (
-          <CompanyDashboard data={data} />
+          <CompanyDashboard data={mockData.empresa} />
         )}
 
         {user.role === 'ADMIN' && (
-          <AdminDashboard data={data} />
+          <AdminDashboard data={mockData.admin} />
         )}
       </div>
     </div>
   )
 }
 
-function MemberDashboard({ data }: { data: any }) {
+function MemberDashboard({ data }: { data: typeof mockData.member }) {
   return (
     <motion.div
       variants={staggerContainer}
@@ -250,7 +246,7 @@ function MemberDashboard({ data }: { data: any }) {
   )
 }
 
-function CompanyDashboard({ data }: { data: any }) {
+function CompanyDashboard({ data }: { data: typeof mockData.empresa }) {
   return (
     <motion.div
       variants={staggerContainer}
@@ -373,7 +369,7 @@ function CompanyDashboard({ data }: { data: any }) {
   )
 }
 
-function AdminDashboard({ data }: { data: any }) {
+function AdminDashboard({ data }: { data: typeof mockData.admin }) {
   return (
     <motion.div
       variants={staggerContainer}

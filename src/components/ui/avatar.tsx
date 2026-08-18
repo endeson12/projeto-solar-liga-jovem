@@ -6,7 +6,7 @@ const Avatar = React.forwardRef<
   React.HTMLAttributes<HTMLSpanElement> & {
     asChild?: boolean
   }
->(({ className, asChild = false, ...props }, ref) => {
+>(({ className, ...props }, ref) => {
   return (
     <span
       ref={ref}
