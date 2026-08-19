@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Sun, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Sun, Github, MapPin } from 'lucide-react'
 
 const footerLinks = {
   navegacao: [
@@ -21,9 +21,7 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Instagram', href: '#', icon: Instagram },
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
+  { name: 'Código no GitHub', href: 'https://github.com/endeson12/projeto-solar-liga-jovem', icon: Github },
 ]
 
 export function Footer() {
@@ -46,15 +44,18 @@ export function Footer() {
               profissão e fortaleça sua comunidade.
             </p>
             
-            {/* Informações de contato */}
+            {/* Identificação pública do protótipo */}
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
-                <span>contato@projetosolar.com.br</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span>(85) 99999-9999</span>
+                <Github className="h-4 w-4" />
+                <a
+                  href="https://github.com/endeson12/projeto-solar-liga-jovem"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Repositório público
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
@@ -115,7 +116,7 @@ export function Footer() {
 
             {/* Redes sociais */}
             <div>
-              <h4 className="font-medium text-foreground mb-3">Siga-nos</h4>
+              <h4 className="font-medium text-foreground mb-3">Projeto</h4>
               <div className="flex space-x-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon

@@ -93,10 +93,10 @@ const howItWorks = [
 ]
 
 const impactNumbers = [
-  { number: '2.500+', label: 'Famílias Beneficiadas', icon: Users },
-  { number: 'R$ 1.2M', label: 'Economia Gerada', icon: TrendingUp },
-  { number: '150+', label: 'Técnicos Formados', icon: GraduationCap },
-  { number: '45 ton', label: 'CO₂ Evitado', icon: Leaf }
+  { number: '4', label: 'Perfis de usuário modelados', icon: Users },
+  { number: '1', label: 'Simulador de economia', icon: TrendingUp },
+  { number: '3', label: 'Etapas da jornada solar', icon: GraduationCap },
+  { number: '100%', label: 'Dados demonstrativos', icon: Leaf }
 ]
 
 export function HomePage() {
@@ -292,10 +292,10 @@ export function HomePage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-              Nosso Impacto
+              Recursos demonstrados
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Juntos, estamos construindo um futuro mais sustentável e próspero para nossas comunidades.
+              Esta é uma demonstração técnica: os indicadores abaixo descrevem o escopo do protótipo e não resultados comerciais reais.
             </p>
           </motion.div>
 
