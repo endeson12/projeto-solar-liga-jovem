@@ -8,7 +8,7 @@
 
 MVP desenvolvido para o **Desafio Liga Jovem Sebrae**. A aplicação apresenta uma proposta de conexão entre comunidades, profissionais e empresas do setor de energia solar.
 
-![Prévia da plataforma SolAr](docs/solar-preview.png)
+![Demonstração pública da plataforma SolAr](docs/solar-demo.png)
 
 ## Problema e proposta
 
