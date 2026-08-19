@@ -92,7 +92,7 @@ export function SimulatorPage() {
         title: 'Simulação concluída!',
         description: 'Confira os resultados abaixo.',
       })
-    } catch (error) {
+    } catch {
       toast({
         title: 'Erro na simulação',
         description: 'Tente novamente em alguns instantes.',
