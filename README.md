@@ -1,278 +1,101 @@
-# SolAr - Energia do Sol para Todos
+# SolAr — Energia do Sol para Todos
 
-![SolAr Logo](https://via.placeholder.com/200x80/FFB703/023047?text=SolAr)
+[![CI](https://github.com/endeson12/projeto-solar-liga-jovem/actions/workflows/ci.yml/badge.svg)](https://github.com/endeson12/projeto-solar-liga-jovem/actions/workflows/ci.yml)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18-149ECA?logo=react)](https://react.dev/)
 
-## 📋 Sobre o Projeto
+MVP desenvolvido para o **Desafio Liga Jovem Sebrae**. A aplicação apresenta uma proposta de conexão entre comunidades, profissionais e empresas do setor de energia solar.
 
-O **SolAr** é uma plataforma digital inovadora que democratiza o acesso à energia solar, conectando comunidades periféricas, técnicos solares e empresas do setor. Nossa missão é tornar a energia limpa acessível para todos, promovendo desenvolvimento sustentável e economia nas contas de luz.
+![Prévia da plataforma SolAr](docs/solar-preview.png)
 
-### 🎯 Público-Alvo
-- **Comunidades periféricas**: Famílias que buscam reduzir custos energéticos
-- **Técnicos solares**: Profissionais em formação e capacitação
-- **Empresas do setor**: Instaladores e fornecedores de energia solar
+## Problema e proposta
 
-## 🚀 Funcionalidades Principais
+O acesso à energia solar envolve decisões técnicas, comparação de fornecedores e estimativas financeiras. O SolAr reúne esses pontos em uma experiência única, orientada a usuários que desejam compreender possibilidades de economia e encontrar participantes do ecossistema local.
 
-### ✅ Implementadas no MVP
-- **🏠 Página Inicial**: Apresentação da plataforma e seus benefícios
-- **⚡ Simulador Solar**: Cálculo personalizado de economia energética
-- **🏢 Catálogo de Empresas**: Listagem e detalhes de empresas parceiras
-- **👥 Comunidades Energéticas**: Formação e gestão de grupos solares
-- **🏆 SolarMatch**: Ranking dos melhores instaladores
-- **📚 Área de Aprendizagem**: Cursos e certificações em energia solar
-- **❓ Central de Ajuda**: FAQ e suporte ao usuário
-- **🔐 Sistema de Autenticação**: Login/registro com perfis diferenciados
-- **📊 Dashboard**: Painel personalizado por tipo de usuário
+## Funcionalidades implementadas
 
-### 🔄 Em Desenvolvimento
-- **💰 Módulo Financeiro**: Gestão de receitas e despesas
-- **💳 Sistema de Pagamentos**: Processamento de transações
-- **🗺️ Mapa Interativo**: Visualização geográfica das comunidades
-- **📄 Geração de PDFs**: Relatórios e certificados
-- **🤖 Chatbot**: Assistente virtual para suporte
+- simulador de economia e dimensionamento solar;
+- catálogo e página de detalhes de empresas;
+- listagem e detalhes de comunidades energéticas;
+- ranking SolarMatch;
+- área de aprendizagem com módulos;
+- autenticação local para demonstração;
+- perfis de cliente, empresa e trabalhador;
+- rotas protegidas por autenticação e papel;
+- tema claro/escuro e interface responsiva;
+- persistência local para os fluxos do MVP.
 
-## 🛠️ Stack Tecnológica
+> Este repositório é um MVP frontend. Autenticação, dados e cálculos são demonstrativos e não substituem serviços de produção ou avaliação técnica especializada.
 
-### Frontend
-- **React 18** - Biblioteca principal
-- **TypeScript** - Tipagem estática
-- **Vite** - Build tool e dev server
-- **Tailwind CSS** - Framework de estilos
-- **shadcn/ui** - Componentes UI baseados em Radix
-- **Framer Motion** - Animações fluidas
-- **React Router** - Roteamento SPA
+## Arquitetura
 
-### Testes
-- **Vitest** - Framework de testes
-- **React Testing Library** - Testes de componentes React
-- **ESLint** - Linter e formatação de código
-- **Husky** - Git hooks
-- **lint-staged** - Execução de linters em arquivos staged
-
-### Bibliotecas Principais
-- **Zustand** - Gerenciamento de estado global
-- **React Hook Form + Zod** - Formulários e validação
-- **Recharts** - Gráficos e visualizações
-- **Lucide React** - Ícones modernos
-- **Leaflet** - Mapas interativos (planejado)
-
-### Ferramentas de Desenvolvimento
-- **ESLint + Prettier** - Qualidade e formatação de código
-- **Vitest** - Testes unitários
-- **MSW** - Mock Service Worker para APIs
-- **IndexedDB/localStorage** - Persistência local
-
-## 🎨 Design System
-
-### Paleta de Cores
-- **Primária**: `#FFB703` (Amarelo Sol) - Energia e otimismo
-- **Secundária**: `#023047` (Azul Escuro) - Confiança e estabilidade
-- **Terciária**: `#2A9D8F` (Verde Sustentabilidade) - Natureza e crescimento
-- **Neutros**: `#F8F9FA`, `#E9ECEF` - Background e textos
-
-### Princípios de Design
-- **Minimalista e acolhedor**: Interface limpa focada na usabilidade
-- **Responsivo**: Mobile-first com adaptação para todos os dispositivos
-- **Acessível**: Conformidade com WCAG AA
-- **Dark Mode**: Suporte nativo a tema escuro
-
-## 📁 Estrutura do Projeto
-
-```
+```text
 src/
-├── app/                    # Configurações da aplicação
-│   └── guards/            # Guards de autenticação e autorização
-├── components/            # Componentes reutilizáveis
-│   ├── ui/               # Componentes base (Button, Card, etc.)
-│   └── layout/           # Componentes de layout (Navbar, Footer)
-├── domains/              # Domínios de negócio
-│   ├── auth/            # Autenticação e autorização
-│   └── simulator/       # Simulador de energia solar
-├── hooks/               # Custom hooks
-├── lib/                 # Utilitários e configurações
-├── pages/              # Páginas da aplicação
-│   ├── Home/           # Página inicial
-│   ├── Simulator/      # Simulador solar
-│   ├── Companies/      # Empresas e detalhes
-│   ├── Communities/    # Comunidades energéticas
-│   ├── Learning/       # Área de aprendizagem
-│   ├── SolarMatch/     # Ranking de instaladores
-│   ├── Auth/          # Login e registro
-│   └── Help/          # Central de ajuda
-├── services/          # Serviços e APIs
-├── store/            # Gerenciamento de estado global
-├── styles/           # Estilos globais
-├── types/            # Definições de tipos TypeScript
-└── utils/            # Funções utilitárias
+├── app/guards/          # proteção por autenticação e papel
+├── components/          # layout, perfis e componentes de interface
+├── domains/             # regras de autenticação e simulador
+├── pages/               # páginas organizadas por funcionalidade
+├── services/            # acesso e abstrações de dados
+├── store/               # estado compartilhado
+├── types/               # contratos TypeScript
+└── utils/               # funções auxiliares
 ```
 
-## 🚀 Como Executar
+A separação por domínios mantém as regras do simulador e da autenticação independentes das páginas e dos componentes visuais.
 
-### Pré-requisitos
-- Node.js 18+ 
-- npm ou yarn
+## Stack
 
-### Instalação
+- React 18 e TypeScript
+- Vite
+- React Router
+- Zustand
+- React Hook Form e Zod
+- Radix UI e Tailwind CSS
+- Framer Motion
+- Recharts
+- Vitest e React Testing Library
+- ESLint, Prettier, Husky e lint-staged
+- GitHub Actions
+
+## Execução local
+
+Requisitos: Node.js 20 ou superior.
+
 ```bash
-# Clone o repositório
-git clone [url-do-repositorio]
-cd solar
-
-# Instale as dependências
-npm install
-
-# Configure as variáveis de ambiente
-cp .env.example .env
-
-# Execute o servidor de desenvolvimento
+git clone https://github.com/endeson12/projeto-solar-liga-jovem.git
+cd projeto-solar-liga-jovem
+npm ci
 npm run dev
 ```
 
-### Scripts Disponíveis
+O MVP não exige credenciais externas para iniciar. Configurações opcionais do simulador podem ser definidas em um arquivo `.env` a partir dos nomes documentados em `src/config/simulator.ts`.
+
+## Qualidade
+
 ```bash
-npm run dev          # Servidor de desenvolvimento
-npm run build        # Build para produção
-npm run preview      # Preview do build
-npm run lint         # Linting do código
-npm run type-check   # Verificação de tipos
-npm test             # Executar testes
-npm run test:watch   # Executar testes em modo watch
-npm run test:coverage # Gerar relatório de cobertura
-npm run test:ui      # Interface gráfica para testes
-npm test            # Execução de testes
-```
-
-## 🌐 Navegação da Aplicação
-
-### Rotas Públicas
-- `/` - Página inicial
-- `/simulador` - Simulador de economia solar
-- `/empresas` - Catálogo de empresas
-- `/empresas/:id` - Detalhes da empresa
-- `/comunidades` - Lista de comunidades
-- `/comunidades/:id` - Detalhes da comunidade
-- `/solarmatch` - Ranking de instaladores
-- `/ajuda` - Central de ajuda
-- `/auth/login` - Login
-- `/auth/register` - Registro
-
-### Rotas Protegidas
-- `/dashboard` - Painel do usuário
-- `/aprendizagem` - Área de aprendizagem
-- `/aprendizagem/:moduleId` - Módulo específico
-
-## 👥 Perfis de Usuário
-
-### 🏠 Membro (Usuário Final)
-- Acesso ao simulador e comunidades
-- Participação em cursos
-- Acompanhamento de economia energética
-
-### 🏢 Empresa (Instalador)
-- Gestão de leads e projetos
-- Participação no SolarMatch
-- Acesso a relatórios financeiros
-
-### 👨‍💼 Admin (Administrador)
-- Gestão completa da plataforma
-- Moderação de conteúdo
-- Análise de métricas globais
-
-## 🔧 Configuração de Ambiente
-
-### Variáveis de Ambiente (.env)
-```bash
-# Configurações do Simulador
-VITE_SIMULATOR_TARIFF=0.65
-VITE_SIMULATOR_REDUCTION_PERCENTAGE=0.95
-VITE_SIMULATOR_SYSTEM_COST_PER_KWP=4500
-VITE_SIMULATOR_SOLAR_IRRADIATION=5.5
-
-# Informações de Contato
-VITE_CONTACT_PHONE="(86) 99999-0000"
-VITE_CONTACT_EMAIL="contato@solar.com.br"
-VITE_CONTACT_ADDRESS="Teresina, PI"
-
-# Configurações do Mapa
-VITE_MAP_DEFAULT_LAT=-5.0892
-VITE_MAP_DEFAULT_LNG=-42.8019
-VITE_MAP_DEFAULT_ZOOM=13
-
-# Modo de Desenvolvimento
-VITE_DEBUG_MODE=true
-```
-
-## 🧪 Testes
-
-### Executar Testes
-```bash
-npm test              # Todos os testes
-npm run test:watch    # Modo watch
-npm run test:coverage # Com cobertura
-```
-
-### Estrutura de Testes
-- **Unitários**: Componentes e utilitários
-- **Integração**: Fluxos completos
-- **E2E**: Cenários de usuário (planejado)
-
-## 📈 Performance e Qualidade
-
-### Métricas Alvo
-- **Lighthouse Score**: ≥90 em todas as categorias
-- **First Contentful Paint**: <1.5s
-- **Largest Contentful Paint**: <2.5s
-- **Cumulative Layout Shift**: <0.1
-
-### Boas Práticas
-- Lazy loading de componentes
-- Otimização de imagens
-- Code splitting automático
-- Service Worker para cache (planejado)
-
-## 🚀 Deploy e Produção
-
-### Build de Produção
-```bash
+npm run lint
+npm run typecheck
+npm run test:ci
 npm run build
-npm run preview  # Testar build localmente
 ```
 
-### Checklist de Deploy
-- [ ] Testes passando
-- [ ] Build sem erros
-- [ ] Variáveis de ambiente configuradas
-- [ ] Performance otimizada
-- [ ] Acessibilidade validada
+A branch principal é validada por CI. O pipeline instala dependências de forma determinística e executa as verificações configuradas no projeto.
 
-## 🤝 Contribuição
+## Decisões e limitações
 
-### Como Contribuir
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
+- **Persistência local:** permite demonstrar o fluxo sem infraestrutura externa, mas não oferece sincronização entre dispositivos.
+- **Autenticação demonstrativa:** foi projetada para validar navegação e papéis, não para armazenar credenciais reais.
+- **Cálculos do simulador:** servem para explorar a experiência do produto; tarifas e premissas precisam ser atualizadas para uso comercial.
+- **Backend e pagamentos:** permanecem fora do escopo deste MVP.
 
-### Padrões de Código
-- Use TypeScript para tipagem
-- Siga as regras do ESLint/Prettier
-- Escreva testes para novas funcionalidades
-- Documente componentes complexos
-- Use commits semânticos
+## Próximas evoluções
 
-## 📝 Licença
+- API e banco de dados para persistência multiusuário;
+- autenticação segura no servidor;
+- integração geográfica para comunidades e empresas;
+- testes de ponta a ponta;
+- auditoria de acessibilidade e performance.
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## Licença
 
-## 📞 Contato e Suporte
-
-- **Email**: contato@solar.com.br
-- **WhatsApp**: (86) 99999-0000
-- **Website**: [solar.com.br](https://solar.com.br)
-
----
-
-**SolAr** - Transformando vidas através da energia solar ☀️
-
-*Desenvolvido com ❤️ para o Desafio Liga Jovem Sebrae*
+Distribuído sob a licença descrita em [LICENSE](LICENSE).
