@@ -4,6 +4,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-149ECA?logo=react)](https://react.dev/)
 
+[**Abrir demonstração pública →**](https://endeson12.github.io/projeto-solar-liga-jovem/)
+
 MVP desenvolvido para o **Desafio Liga Jovem Sebrae**. A aplicação apresenta uma proposta de conexão entre comunidades, profissionais e empresas do setor de energia solar.
 
 ![Prévia da plataforma SolAr](docs/solar-preview.png)
